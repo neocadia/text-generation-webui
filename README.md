@@ -232,14 +232,14 @@ Optionally, you can use the following command-line flags:
 
 | Flag                      | Description |
 |---------------------------|-------------|
-| `--wbits WBITS`           | GPTQ: Load a pre-quantized model with specified precision in bits. 2, 3, 4 and 8 are supported. |
-| `--model_type MODEL_TYPE` | GPTQ: Model type of pre-quantized model. Currently LLaMA, OPT, and GPT-J are supported. |
-| `--groupsize GROUPSIZE`   | GPTQ: Group size. |
-| `--pre_layer PRE_LAYER`   | GPTQ: The number of layers to allocate to the GPU. Setting this parameter enables CPU offloading for 4-bit models. |
-| `--no-quant_attn`         | GPTQ: Disable quant attention for triton. If you encounter incoherent results try disabling this. |
-| `--no-warmup_autotune`    | GPTQ: Disable warmup autotune for triton. |
-| `--no-fused_mlp`          | GPTQ: Disable fused mlp for triton. If you encounter "Unexpected mma -> mma layout conversion" try disabling this. |
-| `--monkey-patch`          | GPTQ: Apply the monkey patch for using LoRAs with quantized models. |
+| `--wbits WBITS`           | Load a pre-quantized model with specified precision in bits. 2, 3, 4 and 8 are supported. |
+| `--model_type MODEL_TYPE` | Model type of pre-quantized model. Currently LLaMA, OPT, and GPT-J are supported. |
+| `--groupsize GROUPSIZE`   | Group size. |
+| `--pre_layer PRE_LAYER`   | The number of layers to allocate to the GPU. Setting this parameter enables CPU offloading for 4-bit models. |
+| `--monkey-patch`          | Apply the monkey patch for using LoRAs with quantized models.
+| `--no-quant_attn`         | (triton) Disable quant attention. If you encounter incoherent results try disabling this.
+| `--no-warmup_autotune`    | (triton) Disable warmup autotune.
+| `--no-fused_mlp`          | (triton) Disable fused mlp. If you encounter "Unexpected mma -> mma layout conversion" try disabling this.
 
 #### FlexGen
 
@@ -292,15 +292,14 @@ Check the [wiki](https://github.com/oobabooga/text-generation-webui/wiki/System-
 
 ## Contributing
 
-Contributions to this project are welcome.
+Pull requests, suggestions, and issue reports are welcome. 
 
-| Way to contribute | Tier |
-|-----------------|-------------|
-| Submit a pull request that fixes a problem or adds a new feature. | ⭐⭐⭐⭐⭐ |
-| Test and review an open pull request. | ⭐⭐⭐⭐⭐ |
-| Submit a bug report after searching to make sure that it has not been reported before. | ⭐⭐⭐⭐ |
-| Submit a feature request that you think is relevant. | ⭐⭐⭐⭐ |
-| Submit a duplicate bug report. | 🥲 |
+You are also welcome to review open pull requests.
+
+Before reporting a bug, make sure that you have:
+
+1. Created a conda environment and installed the dependencies exactly as in the *Installation* section above.
+2. [Searched](https://github.com/oobabooga/text-generation-webui/issues) to see if an issue already exists for the issue you encountered.
 
 ## Credits
 
